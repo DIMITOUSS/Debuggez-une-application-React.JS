@@ -13,7 +13,15 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  const {last} = useData()
+  /* fetch the data, but it directly destructures the last property from the returned object.
+The last property likely represents the last event directly provided by the data context, 
+eliminating the need for manual extraction and processing within the component */
+ const { data } = useData();
+const last =
+  data && data.events && data.events.length > 0
+    ? data.events[data.events.length - 1]
+    : null;
+    
   return <>
     <header>
       <Menu />
@@ -114,16 +122,18 @@ const Page = () => {
       </div>
     </main>
     <footer className="row">
-      <div className="col presta">
-        <h3>Notre derniére prestation</h3>
-        <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
-          date={new Date(last?.date)}
-          small
-          label="boom"
-        />
-      </div>
+    <div className="col presta">
+    <h3>Notre derniére prestation</h3>
+    {last && (
+      <EventCard
+        imageSrc={last.cover}
+        title={last.title}
+        date={new Date(last.date)}
+        small
+        label="boom"
+      />
+    )}
+  </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
         <address>45 avenue de la République, 75000 Paris</address>
