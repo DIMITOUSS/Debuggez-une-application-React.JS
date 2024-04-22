@@ -30,7 +30,7 @@ const last =
       <section className="SliderContainer">
         <Slider />
       </section>
-      <section className="ServicesContainer">
+      <section className="ServicesContainer" id="nos-services" >
         <h2 className="Title">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
         <div className="ListContainer">
@@ -59,11 +59,11 @@ const last =
           </ServiceCard>
         </div>
       </section>
-      <section className="EventsContainer">
+      <section className="EventsContainer" id="nos-realisations">
         <h2 className="Title">Nos réalisations</h2>
         <EventList />
       </section>
-      <section className="PeoplesContainer">
+      <section className="PeoplesContainer"id="notre-equipe">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
         <div className="ListContainer">
@@ -140,16 +140,16 @@ const last =
         <div>01 23 45 67 89</div>
         <div>contact@724events.com</div>
         <div>
-          <a href="#twitch">
+          <a href="https://www.twitch.com">
             <Icon name="twitch" />
           </a>
-          <a href="#facebook">
+          <a href="https://www.facebook.com">
             <Icon name="facebook" />
           </a>
-          <a href="#twitter">
+          <a href="https://twitter.com/login"target="blank">
             <Icon name="twitter" />
           </a>
-          <a href="#youtube">
+          <a href="https://www.youtube.com">
             <Icon name="youtube" />
           </a>
         </div>
